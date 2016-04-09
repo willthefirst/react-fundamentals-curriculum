@@ -5,19 +5,29 @@ function getStyles(props) {
   return {
     container: {
       display: 'flex',
-      flexDirection: props.direction || 'column'
-    },
-    margin: {
-      margin: 10
+      flexDirection: props.direction || 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
     }
   }
+}
+
+function Button(props) {
+  return (
+    <button
+      type="button"
+      className="btn btn-md btn-success"
+      style={{margin: 10}}>
+      Get Weather
+    </button>
+  )
 }
 
 function GetCity(props) {
   return (
     <form className="text-center" style={getStyles(props).container}>
-      <input type="text" className="form-control" style={getStyles(props).margin} placeholder="San Francisco, CA" />
-      <button type="button" className="btn btn-md btn-success" style={getStyles(props).margin}>Get Weather</button>
+      <input type="text" className="form-control" placeholder="San Francisco, CA" />
+      <Button />
     </form>
   )
 }

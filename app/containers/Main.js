@@ -11,7 +11,8 @@ var styles = {
     backgroundColor: 'orange',
     color: '#fff',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 };
 
