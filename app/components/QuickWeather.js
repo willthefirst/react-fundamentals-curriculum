@@ -1,11 +1,13 @@
 var React = require('react');
+var Link = require('react-router').Link;
 
 function QuickWeather(props) {
+  console.log(props)
   return (
-    <div style={props.style}>
+    <Link to={'/detail/'} style={props.style}>
       <img src={props.iconUrl} style={{width:'100%'}} />
       <h2>{props.date}</h2>
-    </div>
+    </Link>
   )
 }
 

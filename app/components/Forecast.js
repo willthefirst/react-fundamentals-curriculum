@@ -27,7 +27,7 @@ function Forecast(props) {
   return (
     <div style={styles.container}>
       <h1>{props.forecast[0].location}</h1>
-      <h2>Select a day:</h2>
+      <h2>Select a day for details:</h2>
       <div style={styles.dayContainer}>
         {props.forecast.map(function(item) {
           return (

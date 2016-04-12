@@ -21,7 +21,7 @@ var Main = React.createClass({
     return (
       <div style={styles.container}>
         <header style={styles.header}>
-          <h1 style={{margin: 0}}>My Weather App</h1>
+          <h1 style={{margin: 0}}><a href="/" style={{color: 'inherit'}}>My Weather App</a></h1>
           <GetCityContainer direction="row"/>
         </header>
         {this.props.children}
