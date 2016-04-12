@@ -12,12 +12,19 @@ var ForecastContainer = React.createClass({
   componentDidMount: function() {
     api.getFiveDayWeather('san francisco, ca')
       .then(function(data) {
-        this.setState({forecast: data});
+        this.setState(
+          {
+            forecast: data,
+            isLoading: false
+          }
+        );
       }.bind(this));
   },
   render: function() {
     return (
-      <Forecast forecast={this.state.forecast} />
+      this.state.isLoading
+      ? <p>Loading...</p>
+      : <Forecast forecast={this.state.forecast} />
     )
   }
 });
