@@ -13,9 +13,6 @@ var GetCityContainer = React.createClass({
       city: ''
     }
   },
-  componentDidMount: function() {
-    console.log('mounted')
-  },
   propTypes: {
     direction: PropTypes.string
   },
@@ -25,7 +22,7 @@ var GetCityContainer = React.createClass({
     });
   },
   handleSubmitCity: function() {
-    console.log(this.props);
+    // api.getFiveDayWeather('san francisco, ca');
   },
   render: function() {
     return (
