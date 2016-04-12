@@ -9,8 +9,14 @@ var ForecastContainer = React.createClass({
       forecast: []
     }
   },
+  componentWillReceiveProps: function(nextProps) {
+    this.getCity(nextProps.location.query.city)
+  },
   componentDidMount: function() {
-    api.getFiveDayWeather('san francisco, ca')
+    this.getCity(this.props.location.query.city)
+  },
+  getCity: function(city) {
+    api.getFiveDayWeather(city)
       .then(function(data) {
         this.setState(
           {

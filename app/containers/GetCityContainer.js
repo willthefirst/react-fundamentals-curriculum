@@ -3,6 +3,9 @@ var GetCity = require('../components/GetCity');
 var PropTypes = React.PropTypes;
 
 var GetCityContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getDefaultProps: function() {
     return {
       direction: 'column'
@@ -21,8 +24,17 @@ var GetCityContainer = React.createClass({
       city: e.target.value
     });
   },
-  handleSubmitCity: function() {
-    // api.getFiveDayWeather('san francisco, ca');
+  handleSubmitCity: function(e) {
+    e.preventDefault();
+    this.setState({
+      city: ''
+    })
+    this.context.router.push({
+      pathname: '/forecast',
+      query: {
+        city: this.state.city
+      }
+    })
   },
   render: function() {
     return (

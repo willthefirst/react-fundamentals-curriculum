@@ -15,10 +15,11 @@ function getFiveDayWeather(city) {
       return forecast.data.list.map(function(day) {
         var date = utils.getDateFromUnix(day.dt);
         return ({
+          location: forecast.data.city.name + ', ' + forecast.data.city.country,
           timestamp: day.dt,
           date: date,
           weather: day.weather[0].main,
-          iconUrl: '../app/images/weather-icons/' + day.weather[0].icon + '.svg'
+          iconUrl: 'http://openweathermap.org/img/w/' + day.weather[0].icon + '.png'
         })
       });
     });
