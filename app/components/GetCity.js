@@ -12,6 +12,17 @@ function getStyles(props) {
   }
 }
 
+function CityInput(props) {
+  return (
+    <input
+      type="text"
+      className="form-control"
+      placeholder="San Francisco, CA"
+      value={props.city}
+      onChange={props.onUpdateCity}/>
+  )
+}
+
 function Button(props) {
   return (
     <button
@@ -26,7 +37,7 @@ function Button(props) {
 function GetCity(props) {
   return (
     <form className="text-center" style={getStyles(props).container} onSubmit={props.onSubmitCity}>
-      <input type="text" className="form-control" placeholder="San Francisco, CA" />
+      <CityInput onUpdateCity={props.onUpdateCity} city={props.city}></CityInput>
       <Button />
     </form>
   )
@@ -34,6 +45,7 @@ function GetCity(props) {
 
 GetCity.PropTypes = {
   direction: PropTypes.string,
+  city: PropTypes.string,
   onSubmitCity: PropTypes.func.isRequired
 }
 
