@@ -8,7 +8,7 @@ var styles = {
   },
   header: {
     padding: 10,
-    backgroundColor: 'orange',
+    backgroundColor: '#ff662b',
     color: '#fff',
     display: 'flex',
     justifyContent: 'space-between',

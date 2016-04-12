@@ -11,9 +11,14 @@ var GetCityContainer = React.createClass({
   propTypes: {
     direction: PropTypes.string
   },
+  handleSubmitCity: function() {
+    alert('City submitted!');
+  },
   render: function() {
     return (
-      <GetCity direction={this.props.direction} />
+      <GetCity
+        direction={this.props.direction}
+        onSubmitCity={this.handleSubmitCity} />
     )
   }
 });

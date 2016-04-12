@@ -15,7 +15,7 @@ function getStyles(props) {
 function Button(props) {
   return (
     <button
-      type="button"
+      type="submit"
       className="btn btn-md btn-success"
       style={{margin: 10}}>
       Get Weather
@@ -25,7 +25,7 @@ function Button(props) {
 
 function GetCity(props) {
   return (
-    <form className="text-center" style={getStyles(props).container}>
+    <form className="text-center" style={getStyles(props).container} onSubmit={props.onSubmitCity}>
       <input type="text" className="form-control" placeholder="San Francisco, CA" />
       <Button />
     </form>
@@ -33,7 +33,8 @@ function GetCity(props) {
 }
 
 GetCity.PropTypes = {
-  direction: PropTypes.string
+  direction: PropTypes.string,
+  onSubmitCity: PropTypes.func.isRequired
 }
 
 module.exports = GetCity;
