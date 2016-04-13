@@ -33,10 +33,9 @@ function Forecast(props) {
           return (
             <QuickWeather
             style={styles.singleDay}
+            day={item}
             key={item.timestamp}
-            weather={item.weather}
-            iconUrl={item.iconUrl}
-            date={item.date} />
+            handleClick={props.handleClick.bind(null, item)} />
           )
         })}
       </div>

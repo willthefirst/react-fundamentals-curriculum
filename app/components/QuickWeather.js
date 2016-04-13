@@ -1,13 +1,22 @@
 var React = require('react');
-var Link = require('react-router').Link;
+
+var style = {
+  singleDay: {
+    width: 200,
+    padding: '12px 18px',
+    margin: '12px',
+    textAlign: 'center',
+    cursor: 'pointer'
+  }
+}
 
 function QuickWeather(props) {
   console.log(props)
   return (
-    <Link to={'/detail/'} style={props.style}>
-      <img src={props.iconUrl} style={{width:'100%'}} />
-      <h2>{props.date}</h2>
-    </Link>
+    <div onClick={props.handleClick} style={style.singleDay}>
+      <img src={props.day.iconUrl} style={{width:'100%'}} />
+      <h2>{props.day.date}</h2>
+    </div>
   )
 }
 
